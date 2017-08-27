@@ -16,7 +16,10 @@
     add: add,
     subtract: subtract,
     multiply: multiply,
-    divide: divide
+    divide: divide,
+    recallMemory: recallMemory,
+    saveMemory: saveMemory,
+    clearMemory: clearMemory,
 
 };
 
@@ -27,6 +30,7 @@
    * @return { Number }    current total
    */
    function load(x){
+    validate(x);
     total = x;
     return total;
    };
@@ -44,6 +48,7 @@
    * @param { Number } x
    */
    function add(x){
+    validate(x);
     total += x;
     return total;
    };
@@ -53,6 +58,7 @@
    * @param  { Number } x
    */
    function subtract(x){
+    validate(x);
     total -= x;
     return total;
    };
@@ -62,6 +68,7 @@
    * @param  { Number } x
    */
    function multiply(x){
+    validate(x);
     total *= x;
     return total;
    };
@@ -71,6 +78,7 @@
    * @param  { Number } x
    */
    function divide(x){
+    validate(x);
     total /= x;
     return total;
    };
@@ -79,19 +87,34 @@
    * Return the value stored at `memory`
    * @return { Number }
    */
-  
+   function recallMemory(){
+    return memory;
+   }
+
   /**
    * Stores the value of `total` to `memory`
    */
-  
+   function saveMemory(){
+    memory = total;
+    return memory;
+   }
+
   /**
    * Clear the value stored at `memory`
    */
- 
+   function clearMemory(){
+    memory = 0;
+    return memory;
+   }
+
   /**
    * Validation
    */
-
+   function validate(x){ 
+    if (typeof x !== "number"){
+    throw new Error("Input a Number");
+    } 
+}
 
    return calculator;
  });
