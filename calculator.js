@@ -13,7 +13,10 @@
    var calculator = {
     load: load,
     getTotal: getTotal,
-  
+    add: add,
+    subtract: subtract,
+    multiply: multiply,
+    divide: divide
 
 };
 
@@ -40,45 +43,55 @@
    * Sums the value passed in with `total`
    * @param { Number } x
    */
-
+   function add(x){
+    total += x;
+    return total;
+   };
 
   /**
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
- 
+   function subtract(x){
+    total -= x;
+    return total;
+   };
 
   /**
    * Multiplies the value by `total`
    * @param  { Number } x
    */
-  
+   function multiply(x){
+    total *= x;
+    return total;
+   };
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
-  
+   function divide(x){
+    total /= x;
+    return total;
+   };
+
   /**
    * Return the value stored at `memory`
    * @return { Number }
    */
-   
-
+  
   /**
    * Stores the value of `total` to `memory`
    */
-   
-
+  
   /**
    * Clear the value stored at `memory`
    */
-  
-
+ 
   /**
    * Validation
    */
- 
+
 
    return calculator;
  });
